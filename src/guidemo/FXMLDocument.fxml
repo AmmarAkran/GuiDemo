@@ -17,6 +17,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.TreeView?>
+<?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -28,12 +29,21 @@
         <menus>
           <Menu fx:id="_file" mnemonicParsing="false" text="_File">
             <items>
-                  <MenuItem fx:id="newItem" mnemonicParsing="false" onAction="#newClick" text="New Project" />
-                  <MenuItem fx:id="openItem" mnemonicParsing="false" onAction="#openClick" text="Open Project" />
+                  <MenuItem fx:id="newItem" mnemonicParsing="false" onAction="#newClick" text="New Project">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="openItem" mnemonicParsing="false" onAction="#openClick" text="Open Project">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
                   <MenuItem fx:id="openItem1" mnemonicParsing="false" onAction="#openClick" text="Import Dataset" />
-                  <MenuItem fx:id="saveItem" mnemonicParsing="false" onAction="#saveClick" text="Save" />
+                  <MenuItem fx:id="saveItem" mnemonicParsing="false" onAction="#saveClick" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
                   <MenuItem fx:id="saveAsItem" mnemonicParsing="false" onAction="#saveAsClick" text="Save As" />
-              <MenuItem fx:id="closeItem" mnemonicParsing="false" onAction="#closeClick" text="Close" />
+              <MenuItem fx:id="closeItem" mnemonicParsing="false" onAction="#closeClick" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="_Edit">

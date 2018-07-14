@@ -80,6 +80,7 @@ public class FXMLDocumentController implements Initializable {
 
                 Stage stage = new Stage();
                 stage.setTitle("New project");
+                stage.setResizable(false);
                 stage.setScene(scene);
 
                 NewProjectController controller = loader.<NewProjectController>getController();
