@@ -30,8 +30,8 @@ public class GuiDemo extends Application {
         
         primaryStage = stage;
 
-        stage.setMinWidth(885);
-        stage.setMinHeight(650);
+        stage.setMinWidth(900);
+        stage.setMinHeight(690);
         stage.setScene(scene);
         stage.show();
     }

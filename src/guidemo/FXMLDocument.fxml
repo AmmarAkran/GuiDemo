@@ -22,11 +22,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="650.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guidemo.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guidemo.FXMLDocumentController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="154.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
-          <Menu fx:id="_file" mnemonicParsing="false" text="File">
+          <Menu fx:id="_file" mnemonicParsing="false" text="_File">
             <items>
                   <MenuItem fx:id="newItem" mnemonicParsing="false" onAction="#newClick" text="New Project" />
                   <MenuItem fx:id="openItem" mnemonicParsing="false" onAction="#openClick" text="Open Project" />
@@ -36,17 +36,17 @@
               <MenuItem fx:id="closeItem" mnemonicParsing="false" onAction="#closeClick" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="_Edit">
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Operations">
+            <Menu mnemonicParsing="false" text="_Operations">
                <items>
                   <MenuItem mnemonicParsing="false" text="Train Model" />
                </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="_Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
