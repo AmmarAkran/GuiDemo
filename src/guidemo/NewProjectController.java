@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -29,7 +30,10 @@ public class NewProjectController implements Initializable {
     }
     
     @FXML public void cancelClick(ActionEvent e) {
-       Platform.exit();
+    // get a handle to the stage
+    Stage stage = (Stage) btn_Cancel.getScene().getWindow();
+    // do what you have to do
+    stage.close();
     }
     
     @Override

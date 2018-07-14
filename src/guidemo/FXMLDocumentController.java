@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -35,6 +36,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -66,32 +68,12 @@ public class FXMLDocumentController implements Initializable {
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setTitle("New Project");
-        stage.setMaxHeight(300);
-        stage.setMaxWidth(630);  
-        stage.setMinHeight(300);
-        stage.setMinWidth(630);
-        
+        stage.setResizable(false);
         stage.setScene(scene);
-        stage.show();  
-
-
+        stage.show();
     }
    
-    @FXML public void nextClick(ActionEvent e) {
-        tabPane.getSelectionModel().select(featureEx);
-    }
-     
-//    @FXML public void newClick(ActionEvent e) {
-//        From f = new Form();
-//        Dilogresult  = f.showDialog();
-//        if(dialogresult == OK) {
-//            f.projectName;
-//            f.projectPath;
-//            File file = new File(f.project + "\\" + f.path);
-//            file.store();
-//        }
-        
-//    }
+    
     
     @FXML public void openClick(ActionEvent e) {
         
@@ -170,6 +152,22 @@ public class FXMLDocumentController implements Initializable {
              return iterations;
          }
      }
+    
+    @FXML public void nextClick(ActionEvent e) {
+        tabPane.getSelectionModel().select(featureEx);
+    }
+     
+//    @FXML public void newClick(ActionEvent e) {
+//        From f = new Form();
+//        Dilogresult  = f.showDialog();
+//        if(dialogresult == OK) {
+//            f.projectName;
+//            f.projectPath;
+//            File file = new File(f.project + "\\" + f.path);
+//            file.store();
+//        }
+        
+//    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) { 
