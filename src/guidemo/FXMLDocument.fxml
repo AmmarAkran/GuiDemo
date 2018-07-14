@@ -22,11 +22,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="645.0" prefWidth="883.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guidemo.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="650.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guidemo.FXMLDocumentController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="154.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu fx:id="_file" mnemonicParsing="false" text="File">
             <items>
                   <MenuItem fx:id="newItem" mnemonicParsing="false" onAction="#newClick" text="New Project" />
                   <MenuItem fx:id="openItem" mnemonicParsing="false" onAction="#openClick" text="Open Project" />

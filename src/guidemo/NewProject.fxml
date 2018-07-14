@@ -67,7 +67,7 @@
             <Separator prefWidth="200.0" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Finish" />
+                  <Button fx:id="btn_Finish" mnemonicParsing="false" onAction="#finishClick" prefHeight="35.0" prefWidth="80.0" text="Finish" />
                   <Button fx:id="btn_Cancel" mnemonicParsing="false" onAction="#cancelClick" prefHeight="35.0" prefWidth="80.0" text="Cancel" />
                </children>
             </HBox>

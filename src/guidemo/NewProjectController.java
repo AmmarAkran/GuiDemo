@@ -25,8 +25,16 @@ public class NewProjectController implements Initializable {
     @FXML private Button btn_Cancel;
     
     
+    
+    
+    public boolean finished = false;
+    
+    
     @FXML public void finishClick(ActionEvent e) {
-        
+        finished = true;
+        Stage stage = (Stage) btn_Finish.getScene().getWindow();
+        // do what you have to do
+        stage.close();
     }
     
     @FXML public void cancelClick(ActionEvent e) {

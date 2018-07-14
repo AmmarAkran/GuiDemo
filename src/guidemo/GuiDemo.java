@@ -6,9 +6,14 @@
 package guidemo;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -16,14 +21,17 @@ import javafx.stage.Stage;
  * @author AMMAR
  */
 public class GuiDemo extends Application {
-    
+    public static Stage primaryStage;
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
         
-        
+        primaryStage = stage;
+
+        stage.setMinWidth(885);
+        stage.setMinHeight(650);
         stage.setScene(scene);
         stage.show();
     }

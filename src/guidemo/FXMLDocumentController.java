@@ -26,6 +26,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
@@ -61,16 +63,35 @@ public class FXMLDocumentController implements Initializable {
     @FXML private Tab featureEx;
     @FXML private AnchorPane rootPane;
     
-    
      public Settings settings;
     @FXML public void newClick(ActionEvent e) throws Exception {
-       Parent root = FXMLLoader.load(getClass().getResource("NewProject.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(root);
-        stage.setTitle("New Project");
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+//       Parent root = FXMLLoader.load(getClass().getResource("NewProject.fxml"));
+//        Stage stage = new Stage();
+//        Scene scene = new Scene(root);
+//        stage.setTitle("New Project");
+//        stage.setResizable(false);
+//        stage.setScene(scene);
+//        stage.showAndWait();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("NewProject.fxml"));
+                final AnchorPane rootPane = (AnchorPane)loader.load();
+                Scene scene =  new Scene(rootPane);
+
+                Stage stage = new Stage();
+                stage.setTitle("New project");
+                stage.setScene(scene);
+
+                NewProjectController controller = loader.<NewProjectController>getController();
+                stage.initOwner(GuiDemo.primaryStage.getScene().getWindow());
+                stage.showAndWait();
+                if(controller.finished) {
+                    System.out.println("OK");
+//                    controller.
+                }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
    
     
