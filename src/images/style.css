@@ -1,0 +1,13 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/07/2018, 08:33:17 م
+    Author     : AMMAR
+*/
+
+
+.btn_pre {-fx-background-image: url("/images/previous-icon.png")}
+.btn_nex {-fx-background-image: url("/images/next-icon.png")}

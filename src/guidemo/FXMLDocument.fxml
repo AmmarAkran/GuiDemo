@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guidemo.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="645.0" prefWidth="883.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guidemo.FXMLDocumentController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="154.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
@@ -40,30 +53,121 @@
           </Menu>
         </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.29797979797979796" layoutX="21.0" layoutY="27.0" prefHeight="373.0" prefWidth="520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+      <SplitPane dividerPositions="0.24967148488830487" layoutX="21.0" layoutY="27.0" prefHeight="373.0" prefWidth="520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0">
                <children>
-                  <TreeView layoutY="6.0" prefHeight="355.0" prefWidth="151.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0" />
+                  <TreeView layoutY="6.0" prefHeight="616.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TabPane layoutX="14.0" layoutY="20.0" prefHeight="371.0" prefWidth="361.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TabPane layoutX="14.0" layoutY="20.0" prefHeight="499.0" prefWidth="658.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <tabs>
                       <Tab text="Preprocess">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="587.0" prefWidth="698.0">
+                                 <children>
+                                    <VBox prefHeight="431.0" prefWidth="628.0" spacing="5.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="25.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <Button alignment="CENTER" mnemonicParsing="false" onAction="#openFileClick" prefHeight="27.0" prefWidth="97.0" text="Open file...">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                                <TextField fx:id="filePath" alignment="TOP_LEFT" editable="false" prefHeight="29.0" prefWidth="550.0">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="13.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <ListView fx:id="listView" prefHeight="399.0" prefWidth="628.0" />
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
                         </content>
                       </Tab>
-                      <Tab text="Feature Extractor">
+                      <Tab fx:id="featureEx" text="Feature Extractor">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="14.0" layoutY="21.0" prefHeight="170.0" prefWidth="658.0" spacing="10.0" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+                                       <children>
+                                          <RadioButton fx:id="machineLearning" mnemonicParsing="false" text="Machine Learning">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <TitledPane prefHeight="133.0" prefWidth="648.0" text="Features">
+                                             <content>
+                                                <HBox prefHeight="140.0" prefWidth="646.0" spacing="30.0">
+                                                   <children>
+                                                      <VBox prefHeight="80.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                                            <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                                            <CheckBox layoutX="10.0" layoutY="27.0" mnemonicParsing="false" text="CheckBox" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="80.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                                            <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                                            <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="80.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                                            <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                                            <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </TitledPane>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="14.0" layoutY="197.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="220.0">
+                                       <children>
+                                          <RadioButton fx:id="deepLearning" mnemonicParsing="false" text="Deep Learning">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <Label prefHeight="17.0" prefWidth="164.0" text="Select the type of learning">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <ChoiceBox prefHeight="25.0" prefWidth="254.0" />
+                                             </children>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
                         </content>
                       </Tab>
                         <Tab text="Classify">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button alignment="CENTER" layoutX="184.0" layoutY="152.0" mnemonicParsing="false" onAction="#progressBarButtonClick" prefHeight="29.0" prefWidth="324.0" text="Start" AnchorPane.bottomAnchor="406.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <ProgressBar fx:id="progressBar" layoutX="70.0" layoutY="269.0" prefHeight="18.0" prefWidth="432.0" progress="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                                 </children></AnchorPane>
                            </content>
                         </Tab>
                         <Tab text="Visualize">
@@ -73,6 +177,8 @@
                         </Tab>
                     </tabs>
                   </TabPane>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="539.0" layoutY="514.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="52.0" prefWidth="49.0" styleClass="btn_pre" stylesheets="@../images/style.css" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="595.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextClick" prefHeight="52.0" prefWidth="49.0" styleClass="btn_nex" stylesheets="@../images/style.css" />
                </children>
             </AnchorPane>
         </items>
